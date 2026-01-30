@@ -1,0 +1,487 @@
+/* Sayfa akışı için */
+.page {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.page.active {
+  display: flex;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #094315;
+  color: white;
+}
+
+#page1 {
+  background-color: #dacdff; /* açık krem */
+}
+
+#page2 {
+  background-color: #cce7ff; /* açık mavi */
+}
+
+#page3 {
+  background-color: #ffe6f0; /* pembe ton */
+}
+
+#page4 {
+  background-color: #e6ffe6; /* açık yeşil */
+}
+
+#page5 {
+  background-color: #f2a7da; 
+}
+
+#page6 {
+  background-color: #feffc3; 
+}
+
+#page7 {
+  background-color: #97e8f7; 
+}
+
+#cake {
+  background-color: #fff0f5; /* pasta arka planı */
+}
+
+
+
+
+.kutu {
+    width: 450px;        /* pastanın genişliği */
+    height: 200px;       /* pastanın yüksekliği */
+    margin: 150px auto;   /* ortalama */
+    
+    background: linear-gradient(to bottom, #fcb3d7, #e8569f); 
+    border-radius: 20px; /* köşeleri biraz yuvarlat */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes shine {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.2; }
+}
+
+.kutu::before {
+    animation: shine 0.5s infinite ease-in-out;
+}
+
+
+.kutu.cikolata {
+    z-index: 2;
+}
+
+.kutu-ust {
+    position: absolute;
+    top: -48px;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background: #532b0f;
+    border-radius: 50%;
+}
+
+.kutu-alt {
+    position: absolute;
+    bottom: -36px;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background: linear-gradient(to bottom, #eb72af, #ea4799); 
+    border-radius: 20px; /* köşeleri biraz yuvarlat */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+
+
+    border-radius: 50%;
+}
+
+
+.ikinci {
+    width: 300px;
+    height: 155px;
+    margin-bottom: -140px; /* alt katın üstüne bindirir */
+
+
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to bottom, #f9a8d1, #e961a5); 
+    border-radius: 20px; /* köşeleri biraz yuvarlat */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.ikinci .kutu-ust {
+    position: absolute;
+    top: -18px;
+    left: 0;
+
+    width: 100%;
+    height: 50px;
+
+    background: #5a2d0c;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.ikinci .kutu-alt {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+
+    width: 100%;
+    height: 60px;
+
+    background: linear-gradient(to bottom, #eb72af, #ea4799); 
+    border-radius: 20px; /* köşeleri biraz yuvarlat */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+
+
+    border-radius: 50%;
+}
+
+.ikinci .damlalar{
+    position: absolute;
+    bottom: 123px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.damlalar {
+    position: absolute;
+    bottom: 149px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.cikolata {
+    position: absolute;
+    top: -46px;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background: linear-gradient(to bottom, #8e4714, #3f1f07); 
+    border-radius: 20px; /* köşeleri biraz yuvarlat */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.118);
+    border-radius: 50% ;
+    z-index: 2;
+
+    overflow: visible;
+}
+.cikolata::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.09), transparent);
+    border-radius: 50%;
+}
+
+
+.ikinci .cikolata {
+    position: absolute;
+    top: -17px;
+    left: 0;
+
+    width: 100%;
+    height: 50px;
+
+    background: linear-gradient(to bottom, #8e4714, #3f1f07); 
+    border-radius: 20px; /* köşeleri biraz yuvarlat */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    border-radius: 50% ;
+
+
+    overflow: visible;
+}
+
+.damla {
+    position: absolute;
+    bottom: -18px;
+    background: linear-gradient(to bottom, #683f22, #512e12);
+    border-radius: 50%;
+    transform-origin: top center;
+    z-index: -1;
+}
+
+
+.candles {
+    position: absolute;
+    top: -65px;              /* pastanın üstünde */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.candles.back {
+    top: -70px;              /* biraz daha arkada */
+    width: 90%;
+    z-index: 3;
+}
+
+.candles.front {
+    top: -40px;              /* biraz daha önde */
+    width: 70%;
+    z-index: 5;
+}
+
+.candle {
+    width: 8px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 10;
+}
+
+.candles.back .candle {
+    background: #0c3fcc;   /* arkadaki mumlar – morumsu */
+}
+
+.candles.front .candle {
+    background: #50a4f8;   /* öndeki mumlar – daha canlı mavi */
+}
+
+
+.candle.long {
+    height: 70px;   /* arkadakiler uzun */
+}
+
+.candle.short {
+    height: 50px;   /* öndekiler kısa */
+}
+
+
+
+.candle::after {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.candles.back .candle::after {
+    background: #e99115;   /* arkada daha soluk */
+}
+
+.candles.front .candle::after {
+    background: #e8ad2c;   /* önde daha canlı */
+}
+
+
+@keyframes flameFlicker {
+    0% {
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+        opacity: 0.9;
+    }
+    25% {
+        transform: translateX(-50%) scale(1.05) rotate(2deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) scale(0.95) rotate(-1deg);
+        opacity: 0.85;
+    }
+    75% {
+        transform: translateX(-50%) scale(1.1) rotate(1deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+        opacity: 0.9;
+    }
+}
+
+.candle::after {
+    content: "";
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 13px;
+    height: 20px;
+    background: #ff7a00;
+    border-radius: 50% 50% 60% 60%;
+    animation: flameFlicker 0.8s infinite ease-in-out;
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.9);
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 12px;
+    background: #f7cb47;
+    border-radius: 50% 50% 60% 60%;
+    animation: flameFlicker 0.6s infinite ease-in-out;
+    z-index: 1;
+}
+
+.candles.back .candle::after {
+    animation-duration: 1s;
+}
+
+.candles.front .candle::after {
+    animation-duration: 0.7s;
+}
+
+.candles.back .candle::before {
+    animation-duration: 0.8s;
+}
+
+.candles.front .candle::before {
+    animation-duration: 0.5s;
+}
+
+.candles.front .candle {
+    background: linear-gradient(#268fec, #07106c); /* pembe degrade */
+}
+.candles.back .candle {
+    background: linear-gradient(#a221dd, #400571); /* turuncu degrade */
+}
+
+
+.sekerlemeler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* çikolatanın üstünde */
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-2px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+.seker {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 0.5s infinite ease-in-out;
+    background: radial-gradient(circle at 30% 30%, #fff, #400303);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.seker::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.7);
+}
+
+
+/* Boyut ve şekil çeşitleri */
+.seker.kucuk {
+    width: 17px;
+    height: 17px;
+}
+
+.seker.buyuk {
+    width: 20px;
+    height: 20px;
+}
+
+.seker.mini {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* Mumları üfleme ile söndürme sınıfı */
+.candle.snatched::after,
+.candle.snatched::before {
+    animation: none !important; /* alev animasyonu durur */
+    opacity: 0; /* alev kaybolur */
+    transition: opacity 0.8s ease-out; /* yavaşça söner */
+} 
+
+/* Daha gerçekçi sağa-sola savrulan konfeti */
+@keyframes confettiFall {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(10px, 25vh) rotate(90deg);
+  }
+  50% {
+    transform: translate(-10px, 50vh) rotate(180deg);
+  }
+  75% {
+    transform: translate(10px, 75vh) rotate(270deg);
+  }
+  100% {
+    transform: translate(0px, 100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.9;
+  top: -60px;
+  animation: confettiFall linear forwards;
+}
+
+
+#page8 textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #f6b0da;
+    resize: none;
+}
+
+#page8 {
+  background-color: #ffdaf4; /* açık krem */
+}
+
+#page8 button {
+    margin-top: 10px;
+    background-color: #ff69b4;
+    color: hsl(0, 0%, 100%);
+}
+
+
